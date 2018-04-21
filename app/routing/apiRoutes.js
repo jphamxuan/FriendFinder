@@ -29,18 +29,17 @@ module.exports = function(app) {
 
 			// If lowest difference, record the friend match
 			if (diff < totalDifference) {
-				// console.log('Closest match found = ' + diff);
-				// console.log('Friend name = ' + friends[i].name);
-				// console.log('Friend image = ' + friends[i].photo);
+			
 
 				totalDifference = diff;
 				matchName = friends[i].name;
 				matchImage = friends[i].photo;
 			}
 		}
+//pushes new user info to data file
         friends.push(userInput);
 
-		// Send appropriate response
+		
 		res.json({status: 'OK', matchName: matchName, matchImage: matchImage});
 	});
 };
